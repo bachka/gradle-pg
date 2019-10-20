@@ -1,0 +1,20 @@
+task helloGradle {
+	doLast {
+		println 'Hello Gradle - This is your first script'
+	}	
+}
+
+task failedTask {
+	doLast {
+		assert 1 == 1
+	}
+}
+
+task test {
+    // depensOn 'helloGradle'
+	doLast {
+		println 'Test case executed!'
+	}
+}
+
+test.dependsOn helloGradle
